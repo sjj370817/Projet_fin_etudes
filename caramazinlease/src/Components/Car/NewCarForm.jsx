@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import styles from "./NewCarForm.module.css";
+import styles from "../GroupeCss/formSave.css"
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../../api/carlease";
@@ -190,13 +190,13 @@ function NewCarForm() {
             type="date"
             name="firstUse"
             id="firstUse"
-            defaultValue={context.action === "editCar" ? car.firstUSe : "2020-09-09"}
+            defaultValue={context.action === "editCar" ? car.firstUSe : "mm/dd/yyyy"}
             required
             ref={firstUseInputRef}
           />
         </div>
 
-        <div className={styles["submit-container"]}>
+        <div className="submit-container">
           <input
             type="submit"
             name="submit-btn"

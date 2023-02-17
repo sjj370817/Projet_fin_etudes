@@ -2,6 +2,7 @@ import React from "react";
 import InvoicesList from "../Components/Invoice/InvoicesList";
 import { useState, useEffect } from "react";
 import api from "../api/carlease";
+import "./AllObject.css"
 
 function AllInvoices() {
     const [invoices, setInvoices] = useState([]);
@@ -20,7 +21,7 @@ function AllInvoices() {
     };
   
     return (
-      <div className="container">
+      <div className="container allCard">
         <h2>Toutes les factures</h2>
         <InvoicesList invoices={invoices} refresh={fetchInvoices} />
       </div>

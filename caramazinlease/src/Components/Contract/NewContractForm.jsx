@@ -83,8 +83,8 @@ function NewContractForm() {
         context.setContract(null);
       } else {
         response = await api.post("/contracts/", newContract);
-        navigate("/contracts/");
       }
+      navigate("/contracts/");
       console.log(response);
     } catch (error) {
       console.log(error);

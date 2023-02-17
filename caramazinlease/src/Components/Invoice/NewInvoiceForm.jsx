@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../../api/carlease";
 import MainContext from "../../store/Main";
-import { Link } from "react-router-dom";
+
 
 function NewInvoiceForm() {
     let navigate = useNavigate();
@@ -14,19 +14,16 @@ function NewInvoiceForm() {
 
     const dateInputRef = useRef();
     const amountInputRef = useRef();
-    const contractInputRef = useRef();
 
-    const submitHandle = async (e) => {
-        e.preventDefault();
+    const submitHandle = async (b) => {
+        b.preventDefault();
 
         const dateValue = dateInputRef.current.value;
         const amountValue = amountInputRef.current.value;
-        const contractValue = contractInputRef.current.value;
 
         const newInvoice = {
             date: dateValue,
             amount: amountValue,
-            idContract: contractValue,
         };
 
         try {
@@ -37,9 +34,9 @@ function NewInvoiceForm() {
                 context.setInvoice(null);
             } else {
                 response = await api.post("/invoices/", newInvoice);
-                navigate("/invoices");
                 console.log(response);
             }
+            navigate("/invoices");
         } catch (error) {
             console.log(error);
         }
@@ -47,30 +44,14 @@ function NewInvoiceForm() {
 
     return (
         <div>
-            <form className={styles["car-form"]} onSubmit={submitHandle}>                
-            <div>
-                    <label htmlFor="idContract">IdContrat</label>
-                    <input
-                        type="text"
-                        name="idContract"
-                        id="idContract"
-                        Value={context.action === "editInvoice" ? invoice.idContract : ""}
-                        required
-                        ref={contractInputRef}
-                        value={context.contract ? context.contract.id : ""}
-
-                    />
-                    <Link to="/findcontract">trouver un Contrat</Link>
-
-                </div>
-
+            <form className={styles["car-form"]} onSubmit={submitHandle}>
                 <div>
                     <label htmlFor="date">Date</label>
                     <input
                         type="date"
                         name="date"
                         id="date"
-                        defaultValue={context.action === "editInvoice" ? invoice.date : "2020-08-09"}
+                        defaultValue={context.action === "editInvoice" ? invoice.date : "mm/dd/yyyy"}
                         required
                         ref={dateInputRef}
                     />

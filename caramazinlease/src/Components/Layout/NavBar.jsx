@@ -1,7 +1,6 @@
 import styles from "./NavBar.module.css";
-import React ,{ useState} from "react";
+import React, { useState } from "react";
 import "./NavBar.css"
-import { Link } from "react-router-dom";
 import DropDownMenu from "./DropDownMenu";
 
 function NavBar() {
@@ -52,20 +51,19 @@ function NavBar() {
 
   const [showLinks, setShowLinks] = useState(false)
 
-    const handleShowlinks = () => {
-        setShowLinks(!showLinks)
+  const handleShowlinks = () => {
+    setShowLinks(!showLinks)
 
-    }
+  }
 
   return (
     <header className={styles.header}>
       <div className="container">
         <div className={styles["header-container"]}>
-          <div className={styles.logo}>Carmazing</div>
           <nav className={`navbar  ${showLinks ? "show-nav" : "hide-nav"}`}>
             <ul className="navbar_links">
-              <li className="navbar_item">
-                <Link to="/">Home</Link>
+              <li>
+                <a href="/" className="a_item">Home</a>
               </li>
 
               <li className="navbar_item">
@@ -88,14 +86,14 @@ function NavBar() {
               <li className="navbar_item">
                 <DropDownMenu menu={optionMenus} />
               </li>
-              
-              <li className="navbar_item">
-                <Link to="/about">About</Link>
+
+              <li>
+                <a href="about" className="a_item">About</a>
               </li>
             </ul>
-            <button className='navbar_burger' onClick={handleShowlinks}>
-                    <span className='burger-bar'></span>
-            </button>
+            <div className='navbar_burger' onClick={handleShowlinks}>
+                <span className='burger-bar'></span>
+            </div>
           </nav>
         </div>
       </div>

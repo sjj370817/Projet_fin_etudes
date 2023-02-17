@@ -37,8 +37,8 @@ function NewOptionForm() {
                 context.setOption(null);
             } else {
                 await api.post("/options/", newOption);
-                navigate("/options");
             }
+        navigate("/options");
         } catch (error) {
             console.log(error);
         }

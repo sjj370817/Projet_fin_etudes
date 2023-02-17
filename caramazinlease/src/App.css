@@ -5,6 +5,10 @@
     outline: none;
 }
 
+Link{
+  color: rgb(221, 150, 8);
+}
+
 body{
     margin: 0;
     font-family: 'Poppins';

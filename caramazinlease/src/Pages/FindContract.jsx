@@ -2,6 +2,7 @@ import React, {  useState } from "react";
 import ContractRow from "../Components/Contract/ContractRow";
 import FindContractForm from "../Components/Contract/FindContractForm";
 import { Link } from "react-router-dom";
+import "./FindObject.css"
 
 function FindContract() {
   const [contract, setContract] = useState(null);
@@ -11,7 +12,7 @@ function FindContract() {
   };
 
   return (
-    <div className="container">
+    <div className="container finCard">
       <h2>Trouver un contract</h2>
       <FindContractForm setContract={updateContract} />
       {contract && <ContractRow contract={contract} />}

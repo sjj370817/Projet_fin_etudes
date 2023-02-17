@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ClientsList from "../Components/Client/ClientsList";
 import api from "../api/carlease";
+import "./AllObject.css"
 
 function AllClients() {
   const [clients, setClients] = useState([]);
@@ -19,7 +20,7 @@ function AllClients() {
   };
 
   return (
-    <div className="container">
+    <div className="container allCard">
       <h2>Tous les clients</h2>
       <ClientsList clients={clients} refresh={fetchClients} />
     </div>

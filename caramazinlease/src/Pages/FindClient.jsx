@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ClientItem from "../Components/Client/ClientItem";
 import FindClientForm from "../Components/Client/FindClientForm";
 import { Link } from "react-router-dom";
+import "./FindObject.css"
 
 function FindClient() {
   const [client, setClient] = useState(null);
@@ -11,7 +12,7 @@ function FindClient() {
   };
 
   return (
-    <div>
+    <div className="finCard">
       <h2>Trouver un client</h2>
       <FindClientForm setClient={updateClient} />
       {client && <ClientItem client={client} />}

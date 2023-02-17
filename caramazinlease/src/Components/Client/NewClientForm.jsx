@@ -90,7 +90,7 @@ function NewClientForm() {
                 <div className={styles["input-group"]}>
                     <label htmlFor="dob">Date de naissance</label>
                     <input type="date" name="dob" id="dob"
-                        defaultValue={client ? client.date : "2023-08-02"}
+                        defaultValue={client ? client.date : "mm/dd/yyyy"}
                         required ref={dobInputRef} />
                 </div>
 

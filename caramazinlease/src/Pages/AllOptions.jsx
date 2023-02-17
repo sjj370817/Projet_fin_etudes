@@ -2,6 +2,7 @@ import React from "react";
 import OptionsTable from "../Components/Option/OptionsTable";
 import { useState, useEffect } from "react";
 import api from "../api/carlease";
+import "./AllObject.css"
 
 function AllOptions() {
     const [options, setOptions] = useState([]);
@@ -20,7 +21,7 @@ function AllOptions() {
     };
   
     return (
-      <div className="container">
+      <div className="container allCard">
         <h2>Toutes les options</h2>
         <OptionsTable options={options} refresh={fetchOptions} />
       </div>

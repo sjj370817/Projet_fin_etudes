@@ -17,6 +17,8 @@ function InvoiceItem(props) {
     context.setAction("editInvoice");
   };
 
+  console.log(props.invoice);
+
   return (
     <div className={styles.CarItem}>
       <div className="image-container">
@@ -24,11 +26,11 @@ function InvoiceItem(props) {
         <img src="" alt="" />
       </div>
       <div className={styles["car-info"]}>
-      <h3>{props.invoice.id}</h3>
-        <h3>{props.invoice.date}</h3>
-        <p>{props.invoice.amount}</p>
-        <p>{props.invoice.idClient}</p>
-        <p>{props.invoice.idContract}</p>
+        <div><h3>{props.invoice.id}</h3></div>
+        <div>
+          <h3>{props.invoice.date}</h3>
+          <h3>{props.invoice.amount}</h3>
+        </div>
       </div>
       <div className={styles.cta}>
         <div

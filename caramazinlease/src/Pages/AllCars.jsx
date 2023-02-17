@@ -2,6 +2,7 @@ import React from "react";
 import CarsList from "../Components/Car/CarsList";
 import { useState, useEffect } from "react";
 import api from "../api/carlease";
+import "./AllObject.css"
 /*
 props = paramètres (fonctions classiques)
 state = variables locales = représente l'ensembles des données dynamiques d'une page
@@ -24,7 +25,7 @@ function AllCars() {
   };
 
   return (
-    <div className="container">
+    <div className="container allCard">
       <h2>Toutes les voitures</h2>
       <CarsList cars={cars} refresh={fetchCars} />
     </div>
