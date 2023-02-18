@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./NewContractForm.module.css";
+import styles from "../GroupeCss/formSave.css"
 import { useRef, useContext } from "react";
 import api from "../../api/carlease";
 import { Link } from "react-router-dom";
@@ -258,7 +258,7 @@ function NewContractForm() {
           />
         </div>
 
-        <div className={styles["submit-container"]}>
+        <div className="input-submit">
           <input
             type="submit"
             name="submit-btn"

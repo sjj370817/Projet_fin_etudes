@@ -16,7 +16,9 @@ function FindClient() {
       <h2>Trouver un client</h2>
       <FindClientForm setClient={updateClient} />
       {client && <ClientItem client={client} />}
-      <Link to="/newcontract">OK</Link>
+      <Link to="/newcontract">
+      <div className="findButton"><button>Ok Car</button></div>
+      </Link>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import styles from "./NewInvoiceForm.module.css";
+import styles from "../GroupeCss/formSave.css"
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../../api/carlease";
@@ -67,7 +67,7 @@ function NewInvoiceForm() {
                         ref={amountInputRef}
                     />
                 </div>
-                <div className={styles["submit-container"]}>
+                <div className="input-submit">
                     <input
                         type="submit"
                         name="submit-btn"

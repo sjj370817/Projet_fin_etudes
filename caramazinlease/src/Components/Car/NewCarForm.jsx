@@ -62,7 +62,7 @@ function NewCarForm() {
 
   return (
     <div className={styles["form-container"]}>
-      <form className={styles["car-form"]} onSubmit={submitHandle}>
+      <form className="car-form" onSubmit={submitHandle}>
         <div className={styles["input-group"]}>
           <label htmlFor="registration">Matricule</label>
           <input
@@ -196,7 +196,7 @@ function NewCarForm() {
           />
         </div>
 
-        <div className="submit-container">
+        <div className="input-submit">
           <input
             type="submit"
             name="submit-btn"

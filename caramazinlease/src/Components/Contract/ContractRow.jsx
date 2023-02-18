@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import styles from "./ContractRow.module.css";
+import styles from "../GroupeCss/formSave.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faFilePen, faList } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";

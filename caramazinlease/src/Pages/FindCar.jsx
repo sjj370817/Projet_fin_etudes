@@ -16,8 +16,14 @@ function FindCar() {
       <h2>Trouver une voiture</h2>
       <FindCarForm setCar={updateCar} />
       {car && <CarItem car={car} />}
-      <Link to="/newcontract">OK voiture</Link>
-      <Link to="/newoption">OK Option</Link>
+      <div className="d-flex">
+        <Link to="/newcontract">
+          <button>Ok Car</button>
+        </Link>
+        <Link to="/newoption">
+          <button>Ok Option</button>
+        </Link>
+      </div>
     </div>
   );
 }

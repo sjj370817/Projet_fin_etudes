@@ -84,7 +84,7 @@ function NewOptionForm() {
                         ref={descriptionInputRef}
                     />
                 </div>
-                <div className={styles["submit-container"]}>
+                <div className="input-submit">
                     <input
                         type="submit"
                         name="submit-btn"

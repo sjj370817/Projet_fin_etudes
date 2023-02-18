@@ -1,8 +1,7 @@
 import React, { useRef, useContext } from "react";
 import api from "../../api/carlease";
-import styles from "./FindInvoiceForm.module.css";
 import MainContext from "../../store/Main";
-
+import styles from "../GroupeCss/formSave.css"
 
 function FindInvoiceForm(props) {
   const context = useContext(MainContext);
@@ -26,13 +25,13 @@ function FindInvoiceForm(props) {
   };
   return (
     <div className={styles["form-container"]}>
-      <form onSubmit={submitHandler}>
+      <form className="car-form" onSubmit={submitHandler}>
         <div className={styles["input-group"]}>
           <label htmlFor="id">id</label>
           <input type="text" name="id" id="id" required ref={idInputRef} />
         </div>
 
-        <div className={styles["submit-container"]}>
+        <div className="input-submit">
           <input
             type="submit"
             name="submit-btn"

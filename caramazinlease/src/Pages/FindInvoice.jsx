@@ -16,7 +16,8 @@ function FindInvoice() {
       <h2>Trouver une facture</h2>
       <FindInvoiceForm setInvoice={updateInvoice} />
       {invoice && <InvoiceItem invoice={invoice} />}
-      <Link to="/invoices">OK</Link>
+      <Link to="/invoices">
+      <button>Toutes les factures</button></Link>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
+import styles from "../GroupeCss/formSave.css"
 import ContractRow from "./ContractRow";
 import api from "../../api/carlease";
-import styles from "./ContractsTable.module.css";
 
 function ContractsTable(props) {
   const deleteHandler = async (contract) => {

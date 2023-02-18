@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import styles from "./NewClientForm.module.css";
+import styles from "../GroupeCss/formSave.css"
 import api from "../../api/carlease";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
@@ -51,7 +51,7 @@ function NewClientForm() {
 
     return (
         <div className={styles["form-container"]}>
-            <form onSubmit={submitHandler}>
+            <form className="car-form" onSubmit={submitHandler}>
                 <div className={styles["input-group"]}>
                     <label htmlFor="fname">Nom</label>
                     <input
@@ -108,7 +108,7 @@ function NewClientForm() {
                         ref={fidelityInputRef}
                     />
                 </div>
-                <div className={styles["input-group"]}>
+                <div className="input-submit">
                     <input
                         type="submit"
                         name="submit-btn"

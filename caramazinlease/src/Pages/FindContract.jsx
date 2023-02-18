@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import ContractRow from "../Components/Contract/ContractRow";
 import FindContractForm from "../Components/Contract/FindContractForm";
 import { Link } from "react-router-dom";
@@ -16,7 +16,9 @@ function FindContract() {
       <h2>Trouver un contract</h2>
       <FindContractForm setContract={updateContract} />
       {contract && <ContractRow contract={contract} />}
-      <Link to="/newinvoice">OK</Link>
+      <Link to="/newinvoice">
+      <div className="findButton"><button>Toutes les factures</button></div>
+      </Link>
     </div>
   );
 }
