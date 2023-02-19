@@ -20,7 +20,7 @@ function AllClients() {
   };
 
   return (
-    <div className="container allCard">
+    <div className="container allCard"  style={{minHeight: "1180px"}}>
       <h2>Tous les clients</h2>
       <ClientsList clients={clients} refresh={fetchClients} />
     </div>

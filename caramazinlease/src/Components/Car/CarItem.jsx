@@ -57,7 +57,7 @@ function CarItem(props) {
               </p>
               <p>Mise en service: {props.car.firstUse}</p>
             </div>
-            <div className="cta">
+            <div style={{width:"100%", display: 'flex', justifyContent: 'space-between', flexDirection: 'row' }}>
               <div
                 className={styles["cta-item"]}
                 onClick={() => props.onDelete(props.car.id)}

@@ -58,7 +58,7 @@ function NavBar() {
 
   return (
     <header className={styles.header}>
-      <div className="container">
+      <div>
         <div className={styles["header-container"]}>
           <nav className={`navbar  ${showLinks ? "show-nav" : "hide-nav"}`}>
             <ul className="navbar_links">

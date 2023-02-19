@@ -21,7 +21,7 @@ function AllOptions() {
     };
   
     return (
-      <div className="container allCard">
+      <div className="container allCard" style={{minHeight: "1180px"}}>
         <h2>Toutes les options</h2>
         <OptionsTable options={options} refresh={fetchOptions} />
       </div>

@@ -20,7 +20,7 @@ function AllContracts() {
   };
 
   return (
-    <div className='container allCard'>
+    <div className='container allCard'  style={{minHeight: "1180px"}}>
       <h2> Toutes les contrats</h2>
       <ContractsTable contracts={contracts} refresh={fetchContracts} />
     </div>

@@ -12,7 +12,7 @@ function FindClient() {
   };
 
   return (
-    <div className="findCard">
+    <div className="findCard"  style={{minHeight: "1180px"}}>
       <h2>Trouver un client</h2>
       <FindClientForm setClient={updateClient} />
       {client && <ClientItem client={client} />}

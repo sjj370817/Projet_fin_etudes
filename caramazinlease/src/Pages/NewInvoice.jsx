@@ -4,7 +4,7 @@ import "./NewObject.css"
 
 function NewInvoice() {
   return (
-    <div className="newCard"> 
+    <div className="newCard"  style={{minHeight: "1180px"}}> 
     <h2>Ajouter une nouvelle facture </h2> 
     <NewInvoiceForm />
     </div>

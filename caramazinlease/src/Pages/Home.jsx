@@ -83,7 +83,7 @@ function Home() {
 
 
   return (
-    <Container>
+    <div style={{minHeight: "1130px"}}>
       <Row>
         <Col>
           <Card>
@@ -125,7 +125,7 @@ function Home() {
           </Card>
         </Col>
       </Row>
-    </Container>
+    </div>
   );
 }
 

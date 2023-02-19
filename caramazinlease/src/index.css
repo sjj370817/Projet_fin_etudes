@@ -11,6 +11,8 @@
   --background-sec-color: #141414;
   --tab-sec-color: #9b9b9b;
   --font-main-color: #eeeeee;
+  width: 100%;
+
 }
 
 * {
@@ -21,15 +23,15 @@
 }
 
 .container {
-  width: 80%;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
 }
 
 body {
   background-color: var(--background-color);
   color: var(--font-main-color);
   font-family: "Poppins", sans-serif;
-  height: 100vh;
+  height: 100%;
   background-color: #555366;
 }
 
