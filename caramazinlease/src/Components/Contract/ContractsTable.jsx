@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../GroupeCss/formSave.css"
 import ContractRow from "./ContractRow";
 import api from "../../api/carlease";
+import Table from 'react-bootstrap/Table';
 
 function ContractsTable(props) {
   const deleteHandler = async (contract) => {
@@ -15,9 +16,10 @@ function ContractsTable(props) {
 
   return (
     <div className={styles["contracts-table-container"]}>
-      <table>
+      <Table striped bordered>
         <thead>
           <tr>
+            <th>id</th>
             <th>Date Contrat</th>
             <th>Date de début</th>
             <th>Date de fin</th>
@@ -27,13 +29,6 @@ function ContractsTable(props) {
             <th>Lieu de retour</th>
             {/* <th>Id Car </th>
             <th>Id Client</th> */}
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -41,7 +36,7 @@ function ContractsTable(props) {
             return <ContractRow contract={contract} onDelete={deleteHandler} />;
           })}
         </tbody>
-      </table>
+      </Table>
     </div>
   );
 }

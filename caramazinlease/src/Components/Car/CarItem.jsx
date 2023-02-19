@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import styles from "../GroupeCss/formSave.css"
+import styles from "../GroupeCss/formList.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTrash,
@@ -9,6 +9,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import MainContext from "../../store/Main";
+
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
 
 /*
 registration;
@@ -31,60 +35,62 @@ function CarItem(props) {
   console.log(props.car);
 
   return (
-    <div className={styles.CarItem}>
-      <div className="image-container">
-        <p>images</p>
-        <img src="" alt="" />
-      </div>
-      <div className={styles["car-info"]}>
-        <h3>{props.car.id}</h3>
-        <h3>{props.car.registration}</h3>
-        <p>{props.car.brand}</p>
-        <p>{props.car.color}</p>
-        <p>{props.car.fuel}</p>
-        <p>{props.car.power}</p>
-        <p>{props.car.maxSpeed}</p>
-        <p>{props.car.Km}</p>
-        <p
-          className={
-            props.car.inUse ? styles["green-border"] : styles["red-border"]
-          }
-        >
-          {props.car.inUse ? "Disponible" : "Indisponible"}
-        </p>
-        <p>{props.car.firstUse}</p>
-      </div>
-      <div className={styles.cta}>
-        <div
-          className={styles["cta-item"]}
-          onClick={() => props.onDelete(props.car.id)}
-        >
-          <FontAwesomeIcon
-            icon={faTrash}
-            className={styles["cta-icon"]}
-          ></FontAwesomeIcon>
-        </div>
-        <div className={styles["cta-item"]}>
-          <FontAwesomeIcon
-            icon={faList}
-            className={styles["cta-icon"]}
-          ></FontAwesomeIcon>
-        </div>
-        <div className={styles["cta-item"]}>
-          <FontAwesomeIcon
-            icon={faHouseMedical}
-            className={styles["cta-icon"]}
-          ></FontAwesomeIcon>
-        </div>
-        <div className={styles["cta-item"]} onClick={updateCar}>
-          <Link to="/newcar">
-            <FontAwesomeIcon
-              icon={faFilePen}
-              className={styles["cta-icon"]}
-            ></FontAwesomeIcon>
-          </Link>
-        </div>
-      </div>
+    <div>
+      <Row className="Item m-auto">
+        <Col>
+          <Card className="card">
+            <div className={styles["car-info"]}>
+              <h3>Id: {props.car.id}</h3>
+              <h3>Matricule: {props.car.registration}</h3>
+              <p>Marque: {props.car.brand}</p>
+              <p>Couleur: {props.car.color}</p>
+              <p>Carburant: {props.car.fuel}</p>
+              <p>Puissance: {props.car.power}</p>
+              <p>Vitesse max: {props.car.maxSpeed}</p>
+              <p>Kilomètrage: {props.car.Km}</p>
+              <p
+                className={
+                  props.car.inUse ? styles["green-border"] : styles["red-border"]
+                }
+              >
+                En service: {props.car.inUse ? "Disponible" : "Indisponible"}
+              </p>
+              <p>Mise en service: {props.car.firstUse}</p>
+            </div>
+            <div className="cta">
+              <div
+                className={styles["cta-item"]}
+                onClick={() => props.onDelete(props.car.id)}
+              >
+                <FontAwesomeIcon
+                  icon={faTrash}
+                  className={styles["cta-icon"]}
+                ></FontAwesomeIcon>
+              </div>
+              <div className={styles["cta-item"]}>
+                <FontAwesomeIcon
+                  icon={faList}
+                  className={styles["cta-icon"]}
+                ></FontAwesomeIcon>
+              </div>
+              <div className={styles["cta-item"]}>
+                <FontAwesomeIcon
+                  icon={faHouseMedical}
+                  className={styles["cta-icon"]}
+                ></FontAwesomeIcon>
+              </div>
+              <div className={styles["cta-item"]} onClick={updateCar}>
+                <Link to="/newcar">
+                  <FontAwesomeIcon
+                    icon={faFilePen}
+                    className={styles["cta-icon"]}
+                  ></FontAwesomeIcon>
+                </Link>
+              </div>
+            </div>
+          </Card>
+        </Col>
+      </Row>
     </div>
   );
 }

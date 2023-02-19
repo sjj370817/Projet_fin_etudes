@@ -12,7 +12,7 @@ function FindContract() {
   };
 
   return (
-    <div className="container finCard">
+    <div className="container findCard">
       <h2>Trouver un contract</h2>
       <FindContractForm setContract={updateContract} />
       {contract && <ContractRow contract={contract} />}

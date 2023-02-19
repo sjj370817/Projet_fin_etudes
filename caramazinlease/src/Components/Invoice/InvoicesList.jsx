@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from "../GroupeCss/formSave.css"
+import "../GroupeCss/formList.css"
 import InvoiceItem from "./InvoiceItem";
 import api from "../../api/carlease";
 
@@ -13,7 +13,7 @@ function InvoicesList(props) {
       }
   };
   return (
-    <div className={styles["cars-container"]}>
+    <div className="list">
       {props.invoices.map((invoice) => {
         return <InvoiceItem invoice={invoice} key={invoice.id} onDelete={deleteInvoice} />;
       })}

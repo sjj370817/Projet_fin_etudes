@@ -1,7 +1,7 @@
 import React from "react";
 import CarItem from "./CarItem";
 import api from "../../api/carlease";
-import styles from "../GroupeCss/formSave.css"
+import "../GroupeCss/formList.css"
 
 
 function CarsList(props) {
@@ -15,7 +15,7 @@ function CarsList(props) {
   };
 
   return (
-    <div className={styles["cars-container"]}>
+    <div className="list">
       {props.cars.map((car) => {
         return <CarItem car={car} key={car.id} onDelete={deleteCar} />;
       })}

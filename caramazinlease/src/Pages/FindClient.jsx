@@ -12,7 +12,7 @@ function FindClient() {
   };
 
   return (
-    <div className="finCard">
+    <div className="findCard">
       <h2>Trouver un client</h2>
       <FindClientForm setClient={updateClient} />
       {client && <ClientItem client={client} />}

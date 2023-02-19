@@ -1,8 +1,7 @@
 import React from "react";
-import styles from "../GroupeCss/formSave.css"
 import ClientItem from "./ClientItem";
 import api from "../../api/carlease";
-
+import "../GroupeCss/formList.css"
 
 function ClientsList(props) {
     const deleteHandler = async (client) => {
@@ -15,7 +14,7 @@ function ClientsList(props) {
     }; 
     
   return (
-    <div className={styles["cars-container"]}>
+    <div className="list">
       {props.clients.map((client) => {
         return <ClientItem client={client}  onDelete={deleteHandler} />;
       })}

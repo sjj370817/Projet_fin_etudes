@@ -87,19 +87,19 @@ function Home() {
       <Row>
         <Col>
           <Card>
-            <h2>Nombre de voitures</h2>
+            <h3>Nombre de voitures</h3>
             <p>{cars.length}</p>
           </Card>
         </Col>
         <Col>
           <Card>
-            <h2>Nombre de cliens</h2>
+            <h3>Nombre de cliens</h3>
             <p>{clients.length}</p>
           </Card>
         </Col>
         <Col>
           <Card>
-          <h2>Contrats signés</h2>
+          <h3>Contrats signés</h3>
             <p>{contracts.length}</p>
           </Card>
         </Col>
@@ -108,19 +108,19 @@ function Home() {
       <Row>
       <Col>
           <Card>
-          <h2>Les Factures</h2>
+          <h3>Les Factures</h3>
             <p>{invoices.length}</p>
           </Card>
         </Col>
         <Col>
           <Card>
-          <h2>Options ajoutés</h2>
+          <h3>Options ajoutés</h3>
             <p>{options.length}</p>
           </Card>
         </Col>
         <Col>
           <Card>
-          <h2>Nombre de voiture</h2>
+          <h3>Nombre de voiture</h3>
             <p></p>
           </Card>
         </Col>

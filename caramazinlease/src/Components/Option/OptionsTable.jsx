@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./OptionStyle.css"
 import api from "../../api/carlease";
 import OptionRow from "./OptionIRow";
+import Table from 'react-bootstrap/Table';
 
 function OptionsTable(props) {
     const deleteHandler = async (option) => {
@@ -15,17 +16,15 @@ function OptionsTable(props) {
     
     return (
         <div className={styles["contracts-table-container"]}>
-        <table>
+        <Table striped bordered>
           <thead>
             <tr>
+              <th>#</th>
               <th>Nom</th>
               <th>Description</th>
               <th>IdVoiture</th>
               {/* <th>Id Car </th>
               <th>Id Client</th> */}
-              <th></th>
-              <th></th>
-              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -33,7 +32,7 @@ function OptionsTable(props) {
               return <OptionRow option={option} onDelete={deleteHandler} />;
             })}
           </tbody>
-        </table>
+        </Table>
       </div>
   );
 }

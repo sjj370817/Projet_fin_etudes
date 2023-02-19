@@ -12,7 +12,7 @@ function FindInvoice() {
     }; 
 
   return (
-     <div className="finCard">
+     <div className="findCard">
       <h2>Trouver une facture</h2>
       <FindInvoiceForm setInvoice={updateInvoice} />
       {invoice && <InvoiceItem invoice={invoice} />}
