@@ -14,3 +14,8 @@
     width: 350px;
     margin: 0 auto;
 }
+
+h3>span{
+    color: #dd9608;
+    font-size: medium;
+}

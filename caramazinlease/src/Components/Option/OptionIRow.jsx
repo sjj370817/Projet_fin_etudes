@@ -6,42 +6,35 @@ import { Link } from "react-router-dom";
 import MainContext from "../../store/Main";
 
 function OptionRow(props) {
-    const context = useContext(MainContext);
-    const updateOption = () => {
-      context.setOption(props.option);
-      context.setAction("editOption");
-    };
+  const context = useContext(MainContext);
+  const updateOption = () => {
+    context.setOption(props.option);
+    context.setAction("editOption");
+  };
 
-    
-  
-    return (
-      <tr className={styles.tr}>
-        <td>{props.option.id}</td>
-        <td>{props.option.name}</td>
-        <td>{props.option.description}</td>
-        <td>{props.option.idCar}</td>
-        <td onClick={() => props.onDelete(props.option)}>
+
+  return (
+    <tr className={styles.tr}>
+      <td>{props.option.id}</td>
+      <td>{props.option.name}</td>
+      <td>{props.option.description}</td>
+      <td>{props.option.idCar}</td>
+      <td style={{ cursor: "pointer" }} onClick={() => props.onDelete(props.option)}>
+        <FontAwesomeIcon
+          icon={faTrash}
+          className={styles["cta-icon"]}
+        ></FontAwesomeIcon>
+      </td>
+      <td style={{ cursor: "pointer" }} onClick={updateOption}>
+        <Link to="/newoption">
           <FontAwesomeIcon
-            icon={faTrash}
+            icon={faFilePen}
             className={styles["cta-icon"]}
           ></FontAwesomeIcon>
-        </td>
-        <td className={styles["cta-item"]} onClick={updateOption}>
-          <Link to="/newoption">
-            <FontAwesomeIcon
-              icon={faFilePen}
-              className={styles["cta-icon"]}
-            ></FontAwesomeIcon>
-          </Link>
-        </td>
-        <td>
-          <FontAwesomeIcon
-            icon={faList}
-            className={styles["cta-icon"]}
-          ></FontAwesomeIcon>
-        </td>
-      </tr>
-    );
-  }  
+        </Link>
+      </td>
+    </tr>
+  );
+}
 
-  export default OptionRow
+export default OptionRow

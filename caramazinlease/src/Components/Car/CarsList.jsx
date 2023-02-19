@@ -22,7 +22,7 @@ function CarsList(props) {
   const handleClose = () => {
     setOpen(false);
   };
-  const deleteCar = async () => {
+  const deleteHandler = async () => {
     try {
       await api.delete("/cars/" + selectedId);
       props.refresh();
@@ -34,7 +34,7 @@ function CarsList(props) {
   };
 
   return (
-    <div className="list">
+    <div className="list" style={{width:"100%", display: 'flex', justifyContent: 'space-around', flexWrap:'wrap'}}>
       {props.cars.map((car) => {
         return <CarItem car={car} key={car.id} onDelete={() => handleClickOpen(car.id)} />;
       })}
@@ -54,7 +54,7 @@ function CarsList(props) {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Non</Button>
-          <Button onClick={deleteCar} autoFocus>
+          <Button onClick={deleteHandler} autoFocus>
             Oui
           </Button>
         </DialogActions>

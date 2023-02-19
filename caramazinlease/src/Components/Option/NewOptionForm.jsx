@@ -5,6 +5,8 @@ import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import MainContext from "../../store/Main";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFilePen } from "@fortawesome/free-solid-svg-icons";
 
 
 function NewOptionForm() {
@@ -15,19 +17,19 @@ function NewOptionForm() {
 
     const nameInputRef = useRef("");
     const descriptionInputRef = useRef("");
-    const carInputRef = useRef("");
+    const car2InputRef = useRef("");
 
     const submitHandler = async (e) => {
         e.preventDefault();
 
         const nameValue = nameInputRef.current.value;
         const descriptionValue = descriptionInputRef.current.value;
-        const carValue = carInputRef.current.value;
+        const car2Value = car2InputRef.current.value;
 
         const newOption = {
             name: nameValue,
             description: descriptionValue,
-            idCar: carValue,
+            idCar: {id: car2Value }
         };
 
         try {
@@ -38,7 +40,7 @@ function NewOptionForm() {
             } else {
                 await api.post("/options/", newOption);
             }
-        navigate("/options");
+            navigate("/options");
         } catch (error) {
             console.log(error);
         }
@@ -55,10 +57,17 @@ function NewOptionForm() {
                         name="car"
                         id="car"
                         required
-                        ref={carInputRef}
-                        Defaultvalue={context.car ? context.car.id : ""}
+                        ref={car2InputRef}
+                        value={context.car ? context.car.id : ""}
                     />
-                    <Link to="/findcar">trouver voiture</Link>
+                    <div style={{ textAlign: "center", padding: "10px" }}>
+                        <Link to="/findcar" className={styles["cta-item"]}>
+                            <FontAwesomeIcon
+                                icon={faFilePen}
+                                className={styles["cta-icon"]}
+                            ></FontAwesomeIcon>
+                        </Link>
+                    </div>
                 </div>
 
                 <div className={styles["input-group"]}>

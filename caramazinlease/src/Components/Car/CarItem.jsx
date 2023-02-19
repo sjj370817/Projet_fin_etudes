@@ -3,15 +3,11 @@ import styles from "../GroupeCss/formList.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTrash,
-  faList,
-  faHouseMedical,
   faFilePen,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import MainContext from "../../store/Main";
 
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 
 /*
@@ -36,61 +32,47 @@ function CarItem(props) {
 
   return (
     <div>
-      <Row className="Item m-auto">
-        <Col>
-          <Card className="card">
-            <div className={styles["car-info"]}>
-              <h3>Id: {props.car.id}</h3>
-              <h3>Matricule: {props.car.registration}</h3>
-              <p>Marque: {props.car.brand}</p>
-              <p>Couleur: {props.car.color}</p>
-              <p>Carburant: {props.car.fuel}</p>
-              <p>Puissance: {props.car.power}</p>
-              <p>Vitesse max: {props.car.maxSpeed}</p>
-              <p>Kilomètrage: {props.car.Km}</p>
-              <p
-                className={
-                  props.car.inUse ? styles["green-border"] : styles["red-border"]
-                }
-              >
-                En service: {props.car.inUse ? "Disponible" : "Indisponible"}
-              </p>
-              <p>Mise en service: {props.car.firstUse}</p>
+      <div className='col'>
+        <Card className="card">
+          <div className={styles["car-info"]}>
+            <h3><span>Id:</span> {props.car.id}</h3>
+            <h3><span>Matricule:</span> {props.car.registration}</h3>
+            <h3><span>Marque:</span> {props.car.brand}</h3>
+            <h3><span>Couleur:</span> {props.car.color}</h3>
+            <h3><span>Carburant:</span> {props.car.fuel}</h3>
+            <h3><span>Puissance:</span> {props.car.power}</h3>
+            <h3><span>Vitesse max:</span> {props.car.maxSpeed}</h3>
+            <h3><span>Kilomètrage:</span> {props.car.Km}</h3>
+            <h3
+              className={
+                props.car.inUse ? styles["green-border"] : styles["red-border"]
+              }
+            >
+              <span>En service:</span> {props.car.inUse ? "Disponible" : "Indisponible"}
+            </h3>
+            <h3><span>Mise en service:</span> {props.car.firstUse}</h3>
+          </div>
+          <div style={{ width: "100%", display: 'flex', justifyContent: 'center', flexDirection: 'row' }}>
+            <div
+              style={{ cursor: "pointer", marginRight: '20px' }}
+              onClick={() => props.onDelete(props.client)}
+            >
+              <FontAwesomeIcon
+                icon={faTrash}
+                className={styles["cta-icon"]}
+              ></FontAwesomeIcon>
             </div>
-            <div style={{width:"100%", display: 'flex', justifyContent: 'space-between', flexDirection: 'row' }}>
-              <div
-                className={styles["cta-item"]}
-                onClick={() => props.onDelete(props.car.id)}
-              >
+            <div className={styles["cta-item"]} onClick={updateCar}>
+              <Link to="/newcar">
                 <FontAwesomeIcon
-                  icon={faTrash}
+                  icon={faFilePen}
                   className={styles["cta-icon"]}
                 ></FontAwesomeIcon>
-              </div>
-              <div className={styles["cta-item"]}>
-                <FontAwesomeIcon
-                  icon={faList}
-                  className={styles["cta-icon"]}
-                ></FontAwesomeIcon>
-              </div>
-              <div className={styles["cta-item"]}>
-                <FontAwesomeIcon
-                  icon={faHouseMedical}
-                  className={styles["cta-icon"]}
-                ></FontAwesomeIcon>
-              </div>
-              <div className={styles["cta-item"]} onClick={updateCar}>
-                <Link to="/newcar">
-                  <FontAwesomeIcon
-                    icon={faFilePen}
-                    className={styles["cta-icon"]}
-                  ></FontAwesomeIcon>
-                </Link>
-              </div>
+              </Link>
             </div>
-          </Card>
-        </Col>
-      </Row>
+          </div>
+        </Card>
+      </div>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
   return (
     <footer>
-      <div className="mb-0">
+      <div className="">
         IBS GLOBAL @2022 Created By Jean-jerome SIACL
       </div>
     </footer>

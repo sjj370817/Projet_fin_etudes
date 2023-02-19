@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilePen } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
+
 /*
 date;
 startLease;
@@ -117,7 +118,14 @@ function NewContractForm() {
             ref={carInputRef}
             value={context.car ? context.car.id : ""}
           />
-          <Link to="/findcar">trouver voiture</Link>
+          <div style={{textAlign: "center", padding:"10px"}}>
+            <Link to="/findcar" className={styles["cta-item"]}>
+              <FontAwesomeIcon
+                icon={faFilePen}
+                className={styles["cta-icon"]}
+              ></FontAwesomeIcon>
+            </Link>
+          </div>
         </div>
 
         <div className={styles["input-group"]}>
@@ -148,7 +156,7 @@ function NewContractForm() {
             required
             value={context.client ? context.client.dob : ""}
           />
-          <div className={styles.cta}>
+          <div style={{textAlign: "center", padding:"10px"}}>
             <Link to="/findclient" className={styles["cta-item"]}>
               <FontAwesomeIcon
                 icon={faFilePen}

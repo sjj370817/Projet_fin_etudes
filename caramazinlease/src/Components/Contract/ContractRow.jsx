@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styles from "../GroupeCss/formSave.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash, faFilePen, faList } from "@fortawesome/free-solid-svg-icons";
+import { faTrash, faFilePen} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import MainContext from "../../store/Main";
 
@@ -24,7 +24,7 @@ function ContractRow(props) {
       <td>{props.contract.placeOfReturn}</td>
       {/* <td>{props.contract.car}</td>
       <td>{props.contract.client}</td> */}
-      <td onClick={() => props.onDelete(props.contract)}>
+      <td style={{cursor: "pointer"}} onClick={() => props.onDelete(props.contract)}>
         <FontAwesomeIcon
           icon={faTrash}
           className={styles["cta-icon"]}
@@ -37,12 +37,6 @@ function ContractRow(props) {
             className={styles["cta-icon"]}
           ></FontAwesomeIcon>
         </Link>
-      </td>
-      <td>
-        <FontAwesomeIcon
-          icon={faList}
-          className={styles["cta-icon"]}
-        ></FontAwesomeIcon>
       </td>
     </tr>
   );

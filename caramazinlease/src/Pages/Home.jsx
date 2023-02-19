@@ -1,6 +1,3 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import api from "../api/carlease";
 import { useState, useEffect } from "react";
@@ -36,9 +33,9 @@ function Home() {
     }
   };
 
-  const [contracts, setContracts]= useState([]);
+  const [contracts, setContracts] = useState([]);
 
-  useEffect(()=> {
+  useEffect(() => {
     fetchContracts();
   }, []);
 
@@ -53,18 +50,18 @@ function Home() {
 
   const [invoices, setInvoices] = useState([]);
 
-    useEffect(() => {
-      fetchInvoices();
-    }, []);
-  
-    const fetchInvoices = async () => {
-      try {
-        const response = await api.get("/invoices/");
-        setInvoices(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  useEffect(() => {
+    fetchInvoices();
+  }, []);
+
+  const fetchInvoices = async () => {
+    try {
+      const response = await api.get("/invoices/");
+      setInvoices(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const [options, setOptions] = useState([]);
 
@@ -83,48 +80,48 @@ function Home() {
 
 
   return (
-    <div style={{minHeight: "1130px"}}>
-      <Row>
-        <Col>
+    <div style={{width:"100%", display: 'flex', justifyContent: 'space-around', flexDirection: 'row'}}>
+      <div>
+        <div className='col'>
           <Card>
             <h3>Nombre de voitures</h3>
             <p>{cars.length}</p>
           </Card>
-        </Col>
-        <Col>
+        </div>
+        <div className='col'>
           <Card>
             <h3>Nombre de cliens</h3>
             <p>{clients.length}</p>
           </Card>
-        </Col>
-        <Col>
+        </div>
+        <div className='col'>
           <Card>
-          <h3>Contrats signés</h3>
+            <h3>Contrats signés</h3>
             <p>{contracts.length}</p>
           </Card>
-        </Col>
+        </div>
 
-      </Row>
-      <Row>
-      <Col>
+      </div>
+      <div>
+        <div className='col'>
           <Card>
-          <h3>Les Factures</h3>
+            <h3>Les Factures</h3>
             <p>{invoices.length}</p>
           </Card>
-        </Col>
-        <Col>
+        </div>
+        <div className='col'>
           <Card>
-          <h3>Options ajoutés</h3>
+            <h3>Options ajoutés</h3>
             <p>{options.length}</p>
           </Card>
-        </Col>
-        <Col>
+        </div>
+        <div className='col'>
           <Card>
-          <h3>Nombre de voiture</h3>
+            <h3>Nombre de voiture</h3>
             <p></p>
           </Card>
-        </Col>
-      </Row>
+        </div>
+      </div>
     </div>
   );
 }

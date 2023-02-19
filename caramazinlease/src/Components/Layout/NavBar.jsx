@@ -66,24 +66,24 @@ function NavBar() {
                 <a href="/" className="a_item">Home</a>
               </li>
 
-              <li className="navbar_item">
+              <li className="navbar_item" style={{cursor: "pointer"}}>
                 <DropDownMenu menu={carMenus} />
               </li>
 
-              <li className="navbar_item">
+              <li className="navbar_item" style={{cursor: "pointer"}}>
                 <DropDownMenu menu={clientMenus} />
               </li>
 
 
-              <li className="navbar_item">
+              <li className="navbar_item" style={{cursor: "pointer"}}>
                 <DropDownMenu menu={contractMenus} />
               </li>
 
-              <li className="navbar_item">
+              <li className="navbar_item" style={{cursor: "pointer"}}>
                 <DropDownMenu menu={invoiceMenus} />
               </li>
 
-              <li className="navbar_item">
+              <li className="navbar_item" style={{cursor: "pointer"}}>
                 <DropDownMenu menu={optionMenus} />
               </li>
 
