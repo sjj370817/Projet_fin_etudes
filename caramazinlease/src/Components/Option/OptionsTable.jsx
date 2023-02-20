@@ -41,7 +41,6 @@ function OptionsTable(props) {
               <th>#</th>
               <th>Nom</th>
               <th>Description</th>
-              <th>IdVoiture</th>
               {/* <th>Id Car </th>
               <th>Id Client</th> */}
             </tr>

@@ -25,7 +25,7 @@ function AllCars() {
   };
 
   return (
-    <div className="container allCard"  style={{minHeight: "1180px"}}>
+    <div className="container allCard">
       <h2>Toutes les voitures</h2>
       <CarsList cars={cars} refresh={fetchCars} />
     </div>

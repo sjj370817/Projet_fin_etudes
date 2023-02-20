@@ -21,7 +21,7 @@ function AllInvoices() {
     };
   
     return (
-      <div className="container allCard"  style={{minHeight: "1180px"}}>
+      <div className="container allCard">
         <h2>Toutes les factures</h2>
         <InvoicesList invoices={invoices} refresh={fetchInvoices} />
       </div>

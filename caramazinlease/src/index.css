@@ -5,9 +5,9 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
 :root {
-  --main-color: #0c0c0c;
+  --main-color: #08022b;
   --sec-color: #fddf35;
-  --background-color: #0c0c0c;
+  --background-color: #020124;
   --background-sec-color: #141414;
   --tab-sec-color: #9b9b9b;
   --font-main-color: #eeeeee;
@@ -42,17 +42,10 @@ h2 {
   text-transform: uppercase;
 }
 
-.footer-content {
-  text-align: center;
-  border-top: 1px solid var(--tab-sec-color);
-  padding-top: 12px;
-  font-weight: 300;
-  font-size: 0.8rem;
-}
 
 footer {
   height: 50px;
-  background-color: var(--background-color);
+  background-color: #01011d;
 }
 
 .link-container {
@@ -73,4 +66,5 @@ footer {
   border: none;
   cursor: pointer;
   color: var(--background-color);
+  text-decoration: none;
 }

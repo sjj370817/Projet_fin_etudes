@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styles from "./OptionStyle.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash, faFilePen, faList } from "@fortawesome/free-solid-svg-icons";
+import { faTrash, faFilePen} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import MainContext from "../../store/Main";
 
@@ -18,7 +18,7 @@ function OptionRow(props) {
       <td>{props.option.id}</td>
       <td>{props.option.name}</td>
       <td>{props.option.description}</td>
-      <td>{props.option.idCar}</td>
+      {/* <td>{props.option.idCar}</td> */}
       <td style={{ cursor: "pointer" }} onClick={() => props.onDelete(props.option)}>
         <FontAwesomeIcon
           icon={faTrash}
