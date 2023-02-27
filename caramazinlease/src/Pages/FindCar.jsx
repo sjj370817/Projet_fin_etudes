@@ -20,8 +20,8 @@ function FindCar() {
 
       <Stack direction="horizontal" gap={4} className="mt-5">
         <div></div>
-        <div className=" border ms-auto p-2"><Link to="/newcontract"> <span>Ok Car</span></Link></div>
-        <div className=" border p-2"><Link to="/newoption">  <span>Ok Option</span> </Link></div>
+        <div className=" border ms-auto p-2"><Link to="/newcontract" style={{textDecoration: "none"}}> <span>Ok Car</span></Link></div>
+        <div className=" border p-2"><Link to="/newoption" style={{textDecoration: "none"}}>  <span>Ok Option</span> </Link></div>
         <div className="ms-auto "></div>
       </Stack>
     </div>

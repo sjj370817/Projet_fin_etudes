@@ -38,7 +38,7 @@ function OptionsTable(props) {
         <Table striped bordered>
           <thead>
             <tr>
-              <th>#</th>
+              <th>Id</th>
               <th>Nom</th>
               <th>Description</th>
               {/* <th>Id Car </th>

@@ -5,6 +5,8 @@ import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
 import { MainContextProvider } from "./store/Main";
 
+import * as serviceWorker from "./serviceWorker";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <MainContextProvider>
@@ -13,3 +15,5 @@ root.render(
     </Router>
   </MainContextProvider>
 );
+
+serviceWorker.unregister();

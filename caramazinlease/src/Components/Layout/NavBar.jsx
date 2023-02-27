@@ -1,9 +1,40 @@
 import styles from "./NavBar.module.css";
-import React, { useState } from "react";
 import "./NavBar.css"
 import DropDownMenu from "./DropDownMenu";
+import React, { useEffect, useState } from "react";
+import {Link } from "react-router-dom";
+import AuthService from "../../services/auth.service";
+
+
+import EventBus from "../../common/EventBus";
 
 function NavBar() {
+  const [showModeratorBoard, setShowModeratorBoard] = useState(false);
+  const [showAdminBoard, setShowAdminBoard] = useState(false);
+  const [currentUser, setCurrentUser] = useState(false);
+
+  useEffect(() => {
+    const user = AuthService.getCurrentUser();
+
+    if (user) {
+      setCurrentUser(user);
+      setShowModeratorBoard(user.roles.includes("ROLE_MODERATOR"));
+      setShowAdminBoard(user.roles.includes("ROLE_ADMIN"));
+    }
+
+    EventBus.on("logout", () => {
+      logOut();
+    });
+
+    return () => {
+      EventBus.remove("logout");
+    };
+  }, []);
+
+  const logOut = () => {
+    AuthService.logout();
+  };
+
   const clientMenus = {
     title: "Clients",
     items: [
@@ -61,29 +92,89 @@ function NavBar() {
       <div>
         <div className={styles["header-container"]}>
           <nav className={`navbar  ${showLinks ? "show-nav" : "hide-nav"}`}>
-            <ul className="navbar_links">
-              <li>
-                <a href="/" className="a_item">Home</a>
+            <div className="navbar-nav mr-auto">
+              <li className="nav-item">
+                <Link to={"/homeConnexion"} className="nav-link" >
+                  Home
+                </Link>
               </li>
 
-              <li className="navbar_item" style={{cursor: "pointer"}}>
+              {showModeratorBoard && (
+                <li className="nav-item">
+                  <Link to={"/mod"} className="nav-link">
+                    Moderator Board
+                  </Link>
+                </li>
+              )}
+
+              {showAdminBoard && (
+                <li className="nav-item">
+                  <Link to={"/admin"} className="nav-link">
+                    Admin Board
+                  </Link>
+                </li>
+              )}
+
+              {currentUser && (
+                <li className="nav-item">
+                  <Link to={"/user"} className="nav-link">
+                    User
+                  </Link>
+                </li>
+              )}
+            </div>
+
+            {currentUser ? (
+              <div className="navbar-nav ml-auto">
+                <li className="nav-item">
+                  <Link to={"/profile"} className="nav-link">
+                    {currentUser.username}
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <a href="/login" className="nav-link" onClick={logOut}>
+                    LogOut
+                  </a>
+                </li>
+              </div>
+            ) : (
+              <div className="navbar-nav ml-auto">
+                <li className="nav-item">
+                  <Link to={"/login"} className="nav-link" style={{textDecoration:"none", color:"rgb(221, 150, 8)"}}>
+                    Login
+                  </Link>
+                </li>
+
+                <li className="nav-item">
+                  <Link to={"/register"} className="nav-link" style={{textDecoration:"none", color:"rgb(221, 150, 8)"}}>
+                    Sign Up
+                  </Link>
+                </li>
+              </div>
+            )}
+            <ul className="navbar_links">
+              <li>
+                <a href="/home" className="a_item">Home</a>
+              </li>
+
+              <li className="navbar_item" style={{ cursor: "pointer" }}>
                 <DropDownMenu menu={carMenus} />
               </li>
 
-              <li className="navbar_item" style={{cursor: "pointer"}}>
+              <li className="navbar_item" style={{ cursor: "pointer" }}>
                 <DropDownMenu menu={clientMenus} />
               </li>
 
 
-              <li className="navbar_item" style={{cursor: "pointer"}}>
+              <li className="navbar_item" style={{ cursor: "pointer" }}>
                 <DropDownMenu menu={contractMenus} />
               </li>
 
-              <li className="navbar_item" style={{cursor: "pointer"}}>
+              <li className="navbar_item" style={{ cursor: "pointer" }}>
                 <DropDownMenu menu={invoiceMenus} />
               </li>
 
-              <li className="navbar_item" style={{cursor: "pointer"}}>
+              <li className="navbar_item" style={{ cursor: "pointer" }}>
                 <DropDownMenu menu={optionMenus} />
               </li>
 
@@ -92,7 +183,7 @@ function NavBar() {
               </li>
             </ul>
             <div className='navbar_burger' onClick={handleShowlinks}>
-                <span className='burger-bar'></span>
+              <span className='burger-bar'></span>
             </div>
           </nav>
         </div>

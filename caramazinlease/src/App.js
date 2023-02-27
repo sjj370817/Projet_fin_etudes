@@ -18,19 +18,39 @@ import FindOption from "./Pages/FindOption";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Error from "./Pages/Error";
-import Footer from "./Components/Layout/Footer";
 import "./App.css"
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
+/*La partie connexion*/
+
+
+import Login from './Components/Login';
+import Profile from './Components/Profile';
+import BoardModerator from './Components/BoardModerator';
+import BoardAdmin from './Components/BoardAdmin';
+import BoardUser from './Components/BoardUser';
+import HomeConnexion from "./Components/HomeConnexion";
+import Register from './Components/Register';
+
 
 function App() {
+
   return (
-    <div style={{minHeight: "100%"}}>
+    <div style={{ minHeight: "100%" }}>
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/" element={<HomeConnexion />} />
+        <Route path="/homeconnexion" element={<HomeConnexion />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/user" element={<BoardUser />} />
+        <Route path="/mod" element={<BoardModerator />} />
+        <Route path="/admin" element={<BoardAdmin />} />
+
+        <Route path="/home" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
 
         <Route path="/cars" element={<AllCars />}></Route>
@@ -55,7 +75,6 @@ function App() {
 
         <Route path="*" element={<Error />}></Route>
       </Routes>
-      <Footer />
     </div>
   );
 }
