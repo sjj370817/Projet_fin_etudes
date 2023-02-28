@@ -1,16 +1,15 @@
-import React, { useContext } from "react";
-import { Route,Link } from "react-router-dom";
-import Auth from "../../context/Auth";
+import { Route, Routes } from "react-router-dom";
+import Login from "../Login";
+import Error from "../../Pages/Error";
 
-const AuthenticatedRoute = ({ path, component}) =>{
-    const {isAuthenticated} = useContext(Auth);
+const AuthenticatedRoute = () => {
+    return (
+        <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="*" element={<Error />} />
+        </Routes>
 
-    console.log(isAuthenticated);
-    return isAuthenticated ? (
-        <Route exact path={path} component={component} />
-    ) : (
-        <Link to ="/login" />
     )
-}
+};
 
 export default AuthenticatedRoute;

@@ -39,14 +39,14 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-
     setMessage("");
     setLoading(true);
 
     form.current.validateAll();
 
     if (checkBtn.current.context._errors.length === 0) {
-      AuthService.login(username, password).then(
+      AuthService.login(username, password)
+      .then(
         () => {
           navigate("/profile");
           window.location.reload();

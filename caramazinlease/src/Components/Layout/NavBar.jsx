@@ -2,7 +2,7 @@ import styles from "./NavBar.module.css";
 import "./NavBar.css"
 import DropDownMenu from "./DropDownMenu";
 import React, { useEffect, useState } from "react";
-import {Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import AuthService from "../../services/auth.service";
 
 
@@ -127,64 +127,64 @@ function NavBar() {
             {currentUser ? (
               <div className="navbar-nav ml-auto">
                 <li className="nav-item">
-                  <Link to={"/profile"} className="nav-link">
+                  <Link to={"/profile"} className="nav-link" style={{ textDecoration: "none", color: "rgb(221, 150, 8)" }}>
                     {currentUser.username}
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <a href="/login" className="nav-link" onClick={logOut}>
+                <li className="nav-item" >
+                  <a href="/login" className="nav-link" onClick={logOut} style={{ textDecoration: "none", color: "rgb(221, 150, 8)" }}>
                     LogOut
                   </a>
                 </li>
+                <ul className="navbar_links">
+                  <li>
+                    <a href="/home" className="a_item">Home</a>
+                  </li>
+
+                  <li className="navbar_item" style={{ cursor: "pointer" }}>
+                    <DropDownMenu menu={carMenus} />
+                  </li>
+
+                  <li className="navbar_item" style={{ cursor: "pointer" }}>
+                    <DropDownMenu menu={clientMenus} />
+                  </li>
+
+
+                  <li className="navbar_item" style={{ cursor: "pointer" }}>
+                    <DropDownMenu menu={contractMenus} />
+                  </li>
+
+                  <li className="navbar_item" style={{ cursor: "pointer" }}>
+                    <DropDownMenu menu={invoiceMenus} />
+                  </li>
+
+                  <li className="navbar_item" style={{ cursor: "pointer" }}>
+                    <DropDownMenu menu={optionMenus} />
+                  </li>
+
+                  <li>
+                    <a href="about" className="a_item">About</a>
+                  </li>
+                </ul>
+                <div className='navbar_burger' onClick={handleShowlinks}>
+                  <span className='burger-bar'></span>
+                </div>
               </div>
             ) : (
               <div className="navbar-nav ml-auto">
                 <li className="nav-item">
-                  <Link to={"/login"} className="nav-link" style={{textDecoration:"none", color:"rgb(221, 150, 8)"}}>
+                  <Link to={"/login"} className="nav-link" style={{ textDecoration: "none", color: "rgb(221, 150, 8)" }}>
                     Login
                   </Link>
                 </li>
 
                 <li className="nav-item">
-                  <Link to={"/register"} className="nav-link" style={{textDecoration:"none", color:"rgb(221, 150, 8)"}}>
+                  <Link to={"/register"} className="nav-link" style={{ textDecoration: "none", color: "rgb(221, 150, 8)" }}>
                     Sign Up
                   </Link>
                 </li>
               </div>
             )}
-            <ul className="navbar_links">
-              <li>
-                <a href="/home" className="a_item">Home</a>
-              </li>
-
-              <li className="navbar_item" style={{ cursor: "pointer" }}>
-                <DropDownMenu menu={carMenus} />
-              </li>
-
-              <li className="navbar_item" style={{ cursor: "pointer" }}>
-                <DropDownMenu menu={clientMenus} />
-              </li>
-
-
-              <li className="navbar_item" style={{ cursor: "pointer" }}>
-                <DropDownMenu menu={contractMenus} />
-              </li>
-
-              <li className="navbar_item" style={{ cursor: "pointer" }}>
-                <DropDownMenu menu={invoiceMenus} />
-              </li>
-
-              <li className="navbar_item" style={{ cursor: "pointer" }}>
-                <DropDownMenu menu={optionMenus} />
-              </li>
-
-              <li>
-                <a href="about" className="a_item">About</a>
-              </li>
-            </ul>
-            <div className='navbar_burger' onClick={handleShowlinks}>
-              <span className='burger-bar'></span>
-            </div>
           </nav>
         </div>
       </div>

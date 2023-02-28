@@ -8,6 +8,7 @@ const register = (username, email, password) => {
     username,
     email,
     password,
+    role: "mod"
   });
 };
 
@@ -17,7 +18,7 @@ const login = (username, password) => {
       password,
     })
     .then((response) => {
-      if (response.data.accessToken) {
+      if (response.data.token) {
         localStorage.setItem("user", JSON.stringify(response.data));
       }
 
@@ -33,11 +34,17 @@ const getCurrentUser = () => {
   return JSON.parse(localStorage.getItem("user"));
 };
 
+const isLogged = () => {
+  return !!localStorage.getItem("user");
+};
+
+
 const AuthService = {
   register,
   login,
   logout,
   getCurrentUser,
+  isLogged,
 };
 
 export default AuthService;

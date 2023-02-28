@@ -33,6 +33,8 @@ import BoardAdmin from './Components/BoardAdmin';
 import BoardUser from './Components/BoardUser';
 import HomeConnexion from "./Components/HomeConnexion";
 import Register from './Components/Register';
+import AuthenticatedRoute from "./Components/Layout/AuthenticatedRoute";
+import StoreAuth from "./context/StoreAuth";
 
 
 function App() {
@@ -45,33 +47,36 @@ function App() {
         <Route path="/homeconnexion" element={<HomeConnexion />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/user" element={<BoardUser />} />
-        <Route path="/mod" element={<BoardModerator />} />
-        <Route path="/admin" element={<BoardAdmin />} />
+        <Route path="/profile" element={
+            <StoreAuth><Profile /></StoreAuth>
+        } />
+        <Route path="/user" element={ <StoreAuth><BoardUser /></StoreAuth>} />
+        <Route path="/mod" element={<StoreAuth><BoardModerator /></StoreAuth>} />
+        <Route path="/admin" element={<StoreAuth><BoardAdmin /></StoreAuth>} />
+        <Route path="/auth/*" element={<AuthenticatedRoute/>}/>
 
-        <Route path="/home" element={<Home />}></Route>
-        <Route path="/about" element={<About />}></Route>
+        <Route path="/home" element={<StoreAuth><Home /></StoreAuth>}></Route>
+        <Route path="/about" element={<StoreAuth><About /></StoreAuth>}></Route>
 
-        <Route path="/cars" element={<AllCars />}></Route>
-        <Route path="/findcar" element={<FindCar />}></Route>
-        <Route path="/newcar" element={<NewCar />}></Route>
+        <Route path="/cars" element={<StoreAuth><AllCars /></StoreAuth>}></Route>
+        <Route path="/findcar" element={<StoreAuth><FindCar /></StoreAuth>}></Route>
+        <Route path="/newcar" element={<StoreAuth><NewCar /></StoreAuth>}></Route>
 
-        <Route path="/clients" element={<AllClients />}></Route>
-        <Route path="/newclient" element={<NewClient />}></Route>
-        <Route path="/findclient" element={<FindClient />}></Route>
+        <Route path="/clients" element={<StoreAuth><AllClients /></StoreAuth>}></Route>
+        <Route path="/newclient" element={<StoreAuth><NewClient /></StoreAuth>}></Route>
+        <Route path="/findclient" element={<StoreAuth><FindClient /></StoreAuth>}></Route>
 
-        <Route path="/contracts" element={<AllContracts />}></Route>
-        <Route path="/newcontract" element={<NewContract />}></Route>
-        <Route path="/findcontract" element={<FindContract />}></Route>
+        <Route path="/contracts" element={<StoreAuth><AllContracts /></StoreAuth>}></Route>
+        <Route path="/newcontract" element={<StoreAuth><NewContract /></StoreAuth>}></Route>
+        <Route path="/findcontract" element={<StoreAuth><FindContract /></StoreAuth>}></Route>
 
-        <Route path="/invoices" element={<AllInvoices />}></Route>
-        <Route path="/newinvoice" element={<NewInvoice />}></Route>
-        <Route path="/findinvoice" element={<FindInvoice />}></Route>
+        <Route path="/invoices" element={<StoreAuth><AllInvoices /></StoreAuth>}></Route>
+        <Route path="/newinvoice" element={<StoreAuth><NewInvoice /></StoreAuth>}></Route>
+        <Route path="/findinvoice" element={<StoreAuth><FindInvoice /></StoreAuth>}></Route>
 
-        <Route path="/options" element={<AllOptions />}></Route>
-        <Route path="/newoption" element={<NewOption />}></Route>
-        <Route path="/findoption" element={<FindOption />}></Route>
+        <Route path="/options" element={<StoreAuth><AllOptions /></StoreAuth>}></Route>
+        <Route path="/newoption" element={<StoreAuth><NewOption /></StoreAuth>}></Route>
+        <Route path="/findoption" element={<StoreAuth><FindOption /></StoreAuth>}></Route>
 
         <Route path="*" element={<Error />}></Route>
       </Routes>
