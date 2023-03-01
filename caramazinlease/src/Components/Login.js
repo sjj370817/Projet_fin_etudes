@@ -16,7 +16,7 @@ const required = (value) => {
   }
 };
 
-const Login = () => {
+const Login = (props) => {
   let navigate = useNavigate();
 
   const form = useRef();
@@ -50,6 +50,7 @@ const Login = () => {
         () => {
           navigate("/profile");
           window.location.reload();
+          props.refresh();
         },
         (error) => {
           const resMessage =
