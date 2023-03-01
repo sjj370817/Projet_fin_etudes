@@ -12,7 +12,7 @@ function FindContract() {
   };
 
   return (
-    <div className="container findCard"  style={{minHeight: "1180px"}}>
+    <div className="container findCard" style={{color:"#04024b"}}  >
       <h2>Trouver un contract</h2>
       <FindContractForm setContract={updateContract} />
       {contract && <ContractRow contract={contract} />}

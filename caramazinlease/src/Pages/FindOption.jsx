@@ -12,7 +12,7 @@ function FindOption() {
   };
 
   return (
-    <div className="findCard"  style={{minHeight: "1180px"}}>
+    <div className="findCard"style={{color:"#04024b"}}  >
       <h2>Trouver une option</h2>
       <FindOptionForm setOption={updateOption} />
       {option && <OptionRow option={option} />}

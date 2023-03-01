@@ -13,7 +13,7 @@ function FindCar() {
   };
 
   return (
-    <div className="findCard"  style={{minHeight: "1180px"}}>
+    <div className="findCard" style={{color:"#04024b"}} >
       <h2>Trouver une voiture</h2>
       <FindCarForm setCar={updateCar} />
       <div className="rt">{car && <CarItem car={car} />}</div>

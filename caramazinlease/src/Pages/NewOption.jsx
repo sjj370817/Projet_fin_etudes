@@ -4,7 +4,7 @@ import "./NewObject.css"
 
 function NewOption() {
   return (
-    <div className="newCard"  style={{minHeight: "1180px"}}>
+    <div className="newCard" style={{color:"#04024b"}}  >
       <h2>Ajouter une option</h2>
       <NewOptionForm />
     </div>

@@ -12,7 +12,7 @@ function FindInvoice() {
     }; 
 
   return (
-     <div className="findCard"  style={{minHeight: "1180px"}}>
+     <div className="findCard"style={{color:"#04024b"}}  >
       <h2>Trouver une facture</h2>
       <FindInvoiceForm setInvoice={updateInvoice} />
       {invoice && <InvoiceItem invoice={invoice} />}

@@ -3,7 +3,7 @@ import "./NewObject.css"
 
 function NewContract() {
   return (
-    <div className="newCard"  style={{minHeight: "1180px"}}>
+    <div className="newCard" style={{color:"#04024b"}} >
       <h2>Nouveau contrat</h2>
       <NewContractForm />
     </div>
