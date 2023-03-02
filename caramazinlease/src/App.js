@@ -43,7 +43,7 @@ function App() {
     <div style={{ minHeight: "100%" }}>
       <NavBar />
       <Routes>
-        <Route path="/" element={<HomeConnexion />} />
+        <Route path="/" element={<Home />} />
         <Route path="/homeconnexion" element={<HomeConnexion />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

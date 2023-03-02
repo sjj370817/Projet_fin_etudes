@@ -1,6 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import api from "../api/carlease";
 import { useState, useEffect } from "react";
+import "./home.css";
 
 function Home() {
   const [cars, setCars] = useState([]);
@@ -80,8 +81,8 @@ function Home() {
 
 
   return (
-    <div style={{width:"100%", display: 'flex', justifyContent: 'space-around', flexDirection: 'row'}}>
-      <div>
+    <div style={{width:"100%", display: 'block'}}>
+      <div className='bloc1' style={{width:"100%", display: 'flex', justifyContent: 'space-around', flexWrap:"wrap"}}>
         <div className='col text-center'>
           <Card>
             <h3>Nombre de voitures</h3>
@@ -100,9 +101,6 @@ function Home() {
             <p>{contracts.length}</p>
           </Card>
         </div>
-
-      </div>
-      <div>
         <div className='col text-center'>
           <Card>
             <h3>Les Factures</h3>

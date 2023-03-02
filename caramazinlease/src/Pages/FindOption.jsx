@@ -15,7 +15,7 @@ function FindOption() {
     <div className="findCard"style={{color:"#04024b"}}  >
       <h2>Trouver une option</h2>
       <FindOptionForm setOption={updateOption} />
-      {option && <OptionRow option={option} />}
+      <div style={{marginTop:"5%"}}>{option && <OptionRow option={option} />}</div>
       {/* <Link to="/newcontract">OK</Link> */}
       <Link to="/options">
         <div className="findButton"><button>Toutes les options</button></div>

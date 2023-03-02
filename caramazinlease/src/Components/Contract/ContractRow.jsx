@@ -13,24 +13,24 @@ function ContractRow(props) {
   };
 
   return (
-    <tr className={styles.tr}>
-      <td>{props.contract.id}</td>
-      <td>{props.contract.date}</td>
-      <td>{props.contract.start}</td>
-      <td>{props.contract.end}</td>
-      <td>{props.contract.totalPrice}</td>
-      <td>{props.contract.advance}</td>
-      <td>{props.contract.leftToPay}</td>
-      <td>{props.contract.placeOfReturn}</td>
+    <tr style={{}}>
+      <td style={{width: '5%', textAlign: 'center'}}>{props.contract.id}</td>
+      <td style={{width: '10%', textAlign: 'center'}}>{props.contract.date}</td>
+      <td style={{width: '10%', textAlign: 'center'}}>{props.contract.start}</td>
+      <td style={{width: '10%', textAlign: 'center'}}>{props.contract.end}</td>
+      <td style={{width: '5%', textAlign: 'center'}}>{props.contract.totalPrice}</td>
+      <td style={{width: '5%', textAlign: 'center'}}>{props.contract.advance}</td>
+      <td style={{width: '5%', textAlign: 'center'}}>{props.contract.leftToPay}</td>
+      <td style={{width: '10%', textAlign: 'center'}}>{props.contract.placeOfReturn}</td>
       {/* <td>{props.contract.car}</td>
       <td>{props.contract.client}</td> */}
-      <td style={{cursor: "pointer"}} onClick={() => props.onDelete(props.contract)}>
+      <td style={{cursor: "pointer", width: '3%', textAlign: 'center'}} onClick={() => props.onDelete(props.contract)}>
         <FontAwesomeIcon
           icon={faTrash}
           className={styles["cta-icon"]}
         ></FontAwesomeIcon>
       </td>
-      <td className={styles["cta-item"]} onClick={updateContract}>
+      <td className={styles["cta-item"]} onClick={updateContract} style={{width: '3%', textAlign: 'center'}}>
         <Link to="/newcontract">
           <FontAwesomeIcon
             icon={faFilePen}

@@ -15,7 +15,7 @@ function FindContract() {
     <div className="container findCard" style={{color:"#04024b"}}  >
       <h2>Trouver un contract</h2>
       <FindContractForm setContract={updateContract} />
-      {contract && <ContractRow contract={contract} />}
+      <div style={{marginTop:"5%"}}>{contract && <ContractRow contract={contract} />}</div>
       <Link to="/newinvoice">
       <div className="findButton"><button>Toutes les factures</button></div>
       </Link>
